@@ -11,14 +11,14 @@ interface Props {
 
 export const Screen_3: FC<Props> = memo(({ }: Props) => {
     const fntSize = useSharedValue(10);
-    const innerHeight = useSharedValue(50);
+    const [volume, setVolume] = useState(20);
+    const innerHeight = useSharedValue(volume);
     const bgColor = useSharedValue(0);
     const width = useSharedValue(8);
     const height = useSharedValue(200);
     const [isSliding, setIsSliding] = useState(false);
     const { width: screenWidth } = Dimensions.get("screen");
     const translateX = useSharedValue(screenWidth / 1.1);
-    const [volume, setVolume] = useState(20);
     const styles = useMemo(() => getStyle(), []);
 
     const mainWrapperStyle = useAnimatedStyle(() => {
@@ -74,7 +74,7 @@ export const Screen_3: FC<Props> = memo(({ }: Props) => {
                 <Slider
                     thumbTintColor="white"
                     step={1}
-                    value={0}
+                    value={volume}
                     minimumValue={0}
                     maximumValue={100}
                     onSlidingStart={() => onSliderActive("Start")}

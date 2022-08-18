@@ -11,14 +11,18 @@ interface Props {
 export const HomeView: FC<Props> = memo(({ navigation }: Props) => {
 	const styles = useMemo(() => getStyle(), []);
 
+	const onNavigate = (screenName: string) => {
+		navigation.navigate(screenName);
+		navigation.setOptions({})
+	}
 	return (
 		<View style={styles.container}>
 			<FlatList
 				data={homeMenuList}
 				style={{ paddingVertical: 16 }}
 				renderItem={(({ item }) => (
-					<TouchableOpacity onPress={() => navigation.navigate(item.screenName)} activeOpacity={0.5} style={styles.itemWrapper}>
-						<Text numberOfLines={1}>{item.title}</Text>
+					<TouchableOpacity onPress={() => onNavigate(item.screenName)} activeOpacity={0.5} style={styles.itemWrapper}>
+						<Text numberOfLines={1}>{item.screenName}</Text>
 					</TouchableOpacity>
 				))}
 			/>

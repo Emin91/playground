@@ -1,5 +1,9 @@
 export const homeMenuList = [
-    { title: "Reanimated - square", screenName: "Screen_1" },
-    { title: "Police siren", screenName: "Screen_2" },
-    { title: "IPhone sounde slider", screenName: "Screen_3" },
+    { screenName: "Reanimated - square" },
+    { screenName: "Police siren" },
+    { screenName: "iPhone sounde slider" },
+    { screenName: "PanHandler - moving square" },
+    { screenName: "Tacking status" },
+    { screenName: "Card flip" },
+    { screenName: "Reanimated - layout animation" },
 ]
