@@ -8,9 +8,9 @@ const App: FC = () => {
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: "black" }}>
-            <Provider {...{ store }}>
+            {/* <Provider {...{ store }}> */}
                 <RootNavigation />
-            </Provider>
+            {/* </Provider> */}
         </SafeAreaView>
     );
 };
