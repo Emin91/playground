@@ -6,4 +6,5 @@ export const homeMenuList = [
     { screenName: "Tacking status" },
     { screenName: "Card flip" },
     { screenName: "Reanimated - layout animation" },
+    { screenName: "Input with animatied show password" },
 ]
