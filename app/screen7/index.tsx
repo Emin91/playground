@@ -1,6 +1,6 @@
 import React, { FC, useMemo, memo, useState, useRef, useEffect } from "react";
 import { View, ScrollView, TouchableOpacity } from "react-native";
-import Animated, { runOnJS, useAnimatedStyle, useSharedValue, withRepeat, withSpring, withTiming } from "react-native-reanimated";
+import Animated, { Extrapolate, interpolate, runOnJS, useAnimatedScrollHandler, useAnimatedStyle, useSharedValue, withRepeat, withSpring, withTiming } from "react-native-reanimated";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { MenuItem } from "./menuItem";
 import { AddItemIcon } from "../assets/svg/addItemIcon";
@@ -16,6 +16,7 @@ export const Screen_7: FC<Props> = memo(({ }: Props) => {
     const scrollRef = useRef<any>(null);
     const emptyOpacity = useSharedValue(1);
     const emptyScale = useSharedValue(1.5);
+    const addButtonBottom = useSharedValue(10)
     const rotate = useSharedValue(0);
     const [isMultiSelect, setIsMultiSelect] = useState(false);
     const [itemList, setItemList] = useState<any[]>([]);
@@ -42,8 +43,10 @@ export const Screen_7: FC<Props> = memo(({ }: Props) => {
         setIsMultiSelect(false);
     };
 
-    const animStyle = useAnimatedStyle(() => {
+    const animAddButtonStyle = useAnimatedStyle(() => {
+        const bottom = interpolate(addButtonBottom.value, [50, 100], [20, -100], Extrapolate.CLAMP);
         return {
+            bottom,
             transform: [
                 { rotate: `${rotate.value}deg` }
             ]
@@ -59,6 +62,12 @@ export const Screen_7: FC<Props> = memo(({ }: Props) => {
         }
     });
 
+    const onScrollHandler = useAnimatedScrollHandler({
+        onScroll(event, context) {
+            addButtonBottom.value = event.contentOffset.y
+        },
+    })
+
     useEffect(() => {
         rotate.value = withRepeat(withSpring(360, { stiffness: 40 }), Infinity, false);
         emptyScale.value = withSpring(1, { stiffness: 100 });
@@ -72,14 +81,16 @@ export const Screen_7: FC<Props> = memo(({ }: Props) => {
     return (
         <View style={styles.container}>
             {isListEmpty
-                ? <ScrollView
+                ? <Animated.ScrollView
                     ref={scrollRef}
+                    scrollEventThrottle={16}
+                    onScroll={onScrollHandler}
                     style={styles.scroll}
                     showsVerticalScrollIndicator={false}>
                     {itemList.map((item) => (
                         <MenuItem key={item.id} {...{ item, isMultiSelect, itemList, setItemList, onPress: () => onRemoveItem(item.id) }} />
                     ))}
-                </ScrollView>
+                </Animated.ScrollView>
                 : <Animated.View style={[styles.emptyState, animEmptyStyle]}>
                     <AddItemIcon />
                 </Animated.View>
@@ -88,7 +99,7 @@ export const Screen_7: FC<Props> = memo(({ }: Props) => {
                 activeOpacity={0.7}
                 onLongPress={() => isListEmpty && setIsMultiSelect(!isMultiSelect)}
                 onPress={() => { !isMultiSelect ? onAddNewItem() : onRemoveSelectedItems() }}
-                style={[styles.addButton, animStyle]}>
+                style={[styles.addButton, animAddButtonStyle]}>
                 {!isMultiSelect ? <PlusIcon /> : <RemoveIcon />}
             </TouchableOpacityAnimated>
         </View>

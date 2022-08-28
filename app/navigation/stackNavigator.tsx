@@ -8,6 +8,7 @@ import { Screen_4 } from "../screen4";
 import { Screen_5 } from "../screen5";
 import { Screen_6 } from "../screen6";
 import { Screen_7 } from "../screen7";
+import { Screen_8 } from "../screen8";
 
 const Stack = createStackNavigator();
 
@@ -25,11 +26,12 @@ export const StacksNavigator: FC = () => {
             <Stack.Screen options={{ headerShown: false }} name={"HomeView"} component={HomeView} />
             <Stack.Screen name={"Reanimated - square"} component={Screen_1} />
             <Stack.Screen name={"Police siren"} component={Screen_2} />
-            <Stack.Screen name={"IPhone sounde slider"} component={Screen_3} />
+            <Stack.Screen name={"iPhone sounde slider"} component={Screen_3} />
             <Stack.Screen name={"PanHandler - moving square"} component={Screen_4} />
             <Stack.Screen name={"Tacking status"} component={Screen_5} />
             <Stack.Screen name={"Card flip"} component={Screen_6} />
             <Stack.Screen name={"Reanimated - layout animation"} component={Screen_7} />
+            <Stack.Screen name={"Input with animatied show password"} component={Screen_8} />
         </Stack.Navigator>
     );
 };
