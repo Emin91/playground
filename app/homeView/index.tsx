@@ -20,9 +20,9 @@ export const HomeView: FC<Props> = memo(({ navigation }: Props) => {
 			<FlatList
 				data={homeMenuList}
 				style={{ paddingVertical: 16 }}
-				renderItem={(({ item }) => (
+				renderItem={(({ item, index }) => (
 					<TouchableOpacity onPress={() => onNavigate(item.screenName)} activeOpacity={0.5} style={styles.itemWrapper}>
-						<Text numberOfLines={1}>{item.screenName}</Text>
+						<Text numberOfLines={1}>{`${index + 1}: ${item.screenName}`}</Text>
 					</TouchableOpacity>
 				))}
 			/>
