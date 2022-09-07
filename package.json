@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "asset": "./node_modules/.bin/react-native-copy-asset"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^4.4.3",
@@ -21,16 +22,22 @@
     "@shopify/react-native-skia": "0.1.142",
     "react": "18.0.0",
     "react-native": "0.69.4",
+    "react-native-deepar": "^0.10.3",
+    "react-native-fs": "^2.20.0",
     "react-native-gesture-handler": "^2.5.0",
     "react-native-linear-gradient": "^2.6.2",
     "react-native-reanimated": "^2.9.1",
     "react-native-safe-area-context": "^4.3.1",
     "react-native-screens": "^3.15.0",
+    "react-native-static-server": "^0.5.0",
     "react-native-svg": "^12.4.4",
+    "react-native-webview": "^11.23.0",
     "react-redux": "^8.0.2",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
-    "redux-saga": "^1.2.0"
+    "redux-saga": "^1.2.0",
+    "rn-fetch-blob": "^0.12.0",
+    "swiftui-react-native": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

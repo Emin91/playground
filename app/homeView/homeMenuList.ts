@@ -7,4 +7,9 @@ export const homeMenuList = [
     { screenName: "Card flip" },
     { screenName: "Reanimated - layout animation" },
     { screenName: "Input with animatied show password" },
+    { screenName: "React native skia - bouncing ball" },
+    { screenName: "React native local server" },
+    { screenName: "React native custom slider" },
+    { screenName: "React native custom round slider" },
+    { screenName: "React native parallax slider" },
 ]

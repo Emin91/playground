@@ -9,6 +9,11 @@ import { Screen_5 } from "../screen5";
 import { Screen_6 } from "../screen6";
 import { Screen_7 } from "../screen7";
 import { Screen_8 } from "../screen8";
+import { Screen_9 } from "../screen9";
+import { Screen_10 } from "../screen10";
+import { Screen_11 } from "../screen11";
+import { Screen_12 } from "../screen12";
+import { Screen_13 } from "../screen13";
 
 const Stack = createStackNavigator();
 
@@ -32,6 +37,11 @@ export const StacksNavigator: FC = () => {
             <Stack.Screen name={"Card flip"} component={Screen_6} />
             <Stack.Screen name={"Reanimated - layout animation"} component={Screen_7} />
             <Stack.Screen name={"Input with animatied show password"} component={Screen_8} />
+            <Stack.Screen name={"React native skia - bouncing ball"} component={Screen_9} />
+            <Stack.Screen name={"React native local server"} component={Screen_10} />
+            <Stack.Screen name={"React native custom slider"} component={Screen_11} />
+            <Stack.Screen name={"React native custom round slider"} component={Screen_12} />
+            <Stack.Screen name={"React native parallax slider"} component={Screen_13} />
         </Stack.Navigator>
     );
 };
