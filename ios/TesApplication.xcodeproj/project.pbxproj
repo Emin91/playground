@@ -13,9 +13,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		228467FD28BBECC700CAD9E7 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 228467FC28BBECC700CAD9E7 /* www */; };
+		33AD175075A841528AC3794A /* 8bitHearts in Resources */ = {isa = PBXBuildFile; fileRef = D01E24D7D70B4781A145DE1C /* 8bitHearts */; };
 		7699B88040F8A987B510C191 /* libPods-TesApplication-TesApplicationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-TesApplication-TesApplicationTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		33AD175075A841528AC3794A /* 8bitHearts in Resources */ = {isa = PBXBuildFile; fileRef = D01E24D7D70B4781A145DE1C /* 8bitHearts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +46,8 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-TesApplication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TesApplication.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = TesApplication/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-TesApplication-TesApplicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TesApplication-TesApplicationTests.release.xcconfig"; path = "Target Support Files/Pods-TesApplication-TesApplicationTests/Pods-TesApplication-TesApplicationTests.release.xcconfig"; sourceTree = "<group>"; };
+		D01E24D7D70B4781A145DE1C /* 8bitHearts */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = 8bitHearts; path = ../app/assets/effects/8bitHearts; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		D01E24D7D70B4781A145DE1C /* 8bitHearts */ = {isa = PBXFileReference; name = "8bitHearts"; path = "../app/assets/effects/8bitHearts"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +143,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		BB9595CFEA64456B87E8D4C7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D01E24D7D70B4781A145DE1C /* 8bitHearts */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,15 +162,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		BB9595CFEA64456B87E8D4C7 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				D01E24D7D70B4781A145DE1C /* 8bitHearts */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
