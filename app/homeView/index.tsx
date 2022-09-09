@@ -19,7 +19,9 @@ export const HomeView: FC<Props> = memo(({ navigation }: Props) => {
 		<View style={styles.container}>
 			<FlatList
 				data={homeMenuList}
+				showsVerticalScrollIndicator={false}
 				style={{ paddingVertical: 16 }}
+				contentContainerStyle={{ paddingBottom: 100 }}
 				renderItem={(({ item, index }) => (
 					<TouchableOpacity onPress={() => onNavigate(item.screenName)} activeOpacity={0.5} style={styles.itemWrapper}>
 						<Text numberOfLines={1}>{`${index + 1}: ${item.screenName}`}</Text>
