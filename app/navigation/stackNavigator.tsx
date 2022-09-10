@@ -16,6 +16,7 @@ import { Screen_12 } from "../screen12";
 import { Screen_13 } from "../screen13";
 import { Screen_14 } from "../screen14";
 import { Screen_15 } from "../screen15";
+import { Screen_16 } from "../screen16";
 
 const Stack = createStackNavigator();
 
@@ -46,6 +47,7 @@ export const StacksNavigator: FC = () => {
             <Stack.Screen name={"Parallax slider"} component={Screen_13} />
             <Stack.Screen name={"Box animation with gestures"} component={Screen_14} />
             <Stack.Screen name={"Animated custom tab bar"} component={Screen_15} />
+            <Stack.Screen options={{headerShown: false, headerStyle: { backgroundColor: "white" }, headerTitleStyle: { color: "black" } }} name={"Voice commands"} component={Screen_16} />
         </Stack.Navigator>
     );
 };
