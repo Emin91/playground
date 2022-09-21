@@ -1,7 +1,7 @@
 import React from "react";
 import Svg, { Defs, LinearGradient, Path, Stop } from "react-native-svg";
 
-export const ProfileIcon = ({isActive}) => {
+export const ProfileIcon = ({ isActive }) => {
     return (
         <Svg
             width={30}
