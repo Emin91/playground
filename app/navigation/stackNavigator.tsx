@@ -1,5 +1,7 @@
 import React, { FC } from "react";
-import { createStackNavigator, TransitionPresets } from "@react-navigation/stack";
+import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
+import { TransitionPresets } from "@react-navigation/stack";
+import { MovieDetails } from "../screen13/moviesDetails";
 import { HomeView } from "../homeView";
 import { Screen_1 } from "../screen1";
 import { Screen_2 } from "../screen2";
@@ -16,8 +18,9 @@ import { Screen_12 } from "../screen12";
 import { Screen_13 } from "../screen13";
 import { Screen_14 } from "../screen14";
 import { Screen_15 } from "../screen15";
+import { Screen_16 } from "../screen16";
 
-const Stack = createStackNavigator();
+const Stack = createSharedElementStackNavigator();
 
 export const StacksNavigator: FC = () => {
     return (
@@ -43,9 +46,16 @@ export const StacksNavigator: FC = () => {
             <Stack.Screen name={"React native local server"} component={Screen_10} />
             <Stack.Screen name={"Custom slider"} component={Screen_11} />
             <Stack.Screen name={"Custom round slider"} component={Screen_12} />
-            <Stack.Screen name={"Parallax slider"} component={Screen_13} />
+            <Stack.Screen options={{ headerShown: true, headerStyle: { backgroundColor: "black" }, headerTitleStyle: { color: "white" } }} name={"Parallax slider"} component={Screen_13} />
             <Stack.Screen name={"Box animation with gestures"} component={Screen_14} />
             <Stack.Screen name={"Animated custom tab bar"} component={Screen_15} />
+            <Stack.Screen name={"MovieDetails"} component={MovieDetails} sharedElements={(route, otherRoute, showing) => {
+                const { item } = route.params;
+                console.log({item: item.id});
+                
+                return [`item.${item.id}.photo`, `item.${item.id}.title`];
+            }} />
+            <Stack.Screen options={{ headerShown: false, headerStyle: { backgroundColor: "white" }, headerTitleStyle: { color: "black" } }} name={"Voice commands"} component={Screen_16} />
         </Stack.Navigator>
     );
 };

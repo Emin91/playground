@@ -7,9 +7,27 @@ export const getStyle = () => {
       justifyContent: "flex-end",
       backgroundColor: 'white',
     },
+    contentWrapper: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    textWrapper: {
+      width: "100%",
+      height: 40,
+      overflow: "hidden",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    selectedMenuText: {
+      fontSize: 34,
+      color: "#212135",
+    },
     tabBarWrapper: {
       width: "100%",
       height: 60,
+      borderWidth: 1,
+      borderColor: '#EDEDED',
       flexDirection: "row",
     },
     buttonWrapper: {
@@ -19,7 +37,7 @@ export const getStyle = () => {
     },
     text: {
       fontSize: 14,
-      color: "white",
+      color: "#212135",
       textAlign: "center"
     }
   });

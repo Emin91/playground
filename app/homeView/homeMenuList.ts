@@ -14,4 +14,5 @@ export const homeMenuList = [
     { screenName: "Parallax slider" },
     { screenName: "Box animation with gestures" },
     { screenName: "Animated custom tab bar" },
+    { screenName: "Voice commands" },
 ]
